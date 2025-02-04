@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Bookstore</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #ff9966, #ff5e62);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        .container {
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input, select {
+            background: rgba(255, 255, 255, 0.8);
+            color: #333;
+        }
+
+        button {
+            background: #ff4444;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #cc0000;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .book-list {
+            margin-top: 20px;
+        }
+
+        .book-item {
+            background: rgba(255, 255, 255, 0.8);
+            color: #333;
+            padding: 15px;
+            margin: 10px auto;
+            border-radius: 5px;
+            max-width: 300px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>📚 Welcome to Online Bookstore 📚</h1>
+
+    <div class="container" id="auth-section">
+        <h2>🔑 Login</h2>
+        <input type="text" id="login-id" placeholder="Enter your ID">
+        <input type="password" id="login-password" placeholder="Enter Password">
+        <button onclick="login()">Login</button>
+
+        <h2>🆕 Sign Up</h2>
+        <input type="text" id="signup-id" placeholder="Enter new ID">
+        <input type="password" id="signup-password" placeholder="Create Password">
+        <select id="user-type">
+            <option value="customer">Customer</option>
+            <option value="publisher">Publisher</option>
+        </select>
+        <button onclick="signup()">Sign Up</button>
+    </div>
+
+    <div class="container hidden" id="publisher-form">
+        <h2>📖 Publish a Book</h2>
+        <input type="text" id="book-title" placeholder="Book Title">
+        <input type="text" id="book-author" placeholder="Author">
+        <input type="text" id="book-publisher" placeholder="Publisher (Canva, Adobe, etc.)">
+        <button onclick="addBook()">Publish Book</button>
+    </div>
+
+    <div class="book-list hidden" id="book-list">
+        <h2>📚 Available Books</h2>
+        <div id="books"></div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
